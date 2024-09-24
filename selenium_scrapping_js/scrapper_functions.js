@@ -14,7 +14,16 @@ function getBase64(image) {
 function getImage() {
   const img = document.querySelector("img:not([data-seleniumImageIsGetted])");
   if (img) {
-    img.setAttribute("data-seleniumImageIsGetted", "true")
+    img.setAttribute("data-seleniumImageIsGetted", "true");
   }
-  return img
-}
+  return img;
+};
+
+async function base64Image() {
+    const img = getImage();
+    if (img) {
+      const base64 = await getBase64(img);
+      return base64;
+    }
+    return null;
+};
