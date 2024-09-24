@@ -1,6 +1,4 @@
-const script = document.createElement("script");
-script.id = "selenium-scrapper";
-script.innerHTML = `function getBase64(image) {
+function getBase64(image) {
   return fetch(image.src)
     .then(response => response.blob())
     .then(blob => {
@@ -11,5 +9,4 @@ script.innerHTML = `function getBase64(image) {
         reader.readAsDataURL(blob);
       });
     });
-}`;
-document.body.appendChild(script);
+};
