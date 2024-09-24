@@ -10,3 +10,11 @@ function getBase64(image) {
       });
     });
 };
+
+function getImage() {
+  const img = document.querySelector("img:not([data-seleniumImageIsGetted])");
+  if (img) {
+    img.setAttribute("data-seleniumImageIsGetted", "true")
+  }
+  return img
+}
